@@ -1,6 +1,15 @@
 {
  "name": "wssgrp",
  "version": "1.0.0",
+ "description": "Servicio Web Para el sistema de Gestion de Reservas y Pedidos",
+ "main": "index.js",
+ "scripts": {
+  "start": "node index.js",
+  "serve": "nodemon index.js",
+  "test": "echo \"Error: no test specified\" && exit 1"
+ },
+ "author": "Alex Javier Caicedo Porras",
+ "license": "MIT",
  "dependencies": {
   "body-parser": "^1.17.2",
   "cors": "^2.8.4",
@@ -9,5 +18,8 @@
   "method-override": "^2.3.9",
   "moment": "^2.18.1",
   "mongoose": "^4.11.10"
+ },
+ "devDependencies": {
+ 	"nodemon": "^1.12.0"
  }
 }
