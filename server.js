@@ -5,6 +5,8 @@ const express = require('express'),
 	cors = require('cors'),
 	methodOverride = require('method-override');
 
+const config = require('./config');
+
 // Configuramos Express	
 const app = express();
 
@@ -13,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride());
 app.use(cors());
 
-app.set('port', 3000);
+app.set('port', config.port);
 
 // Importamos nuestros modelos
 require('./models/user');
@@ -23,7 +25,7 @@ const router = require('./routes/index');
 app.use(router);
 
 // Iniciamos el servidor y la base de datos
-mongoose.connect('mongodb://localhost/sgrpprod_desa',{ 
+mongoose.connect(config.db,{ 
 	useMongoClient: true 
 }, (err) => {
     app.listen(app.get('port'), function(){
