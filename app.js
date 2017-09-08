@@ -7,7 +7,7 @@ const express = require('express'),
 	cors = require('cors'),
 	methodOverride = require('method-override');
 
-const api = require('./routes');
+const api = require('./routes/index');
 
 const app = express();
 
@@ -21,6 +21,6 @@ app.set('view engine', '.hbs');
 app.use(methodOverride());
 app.use(cors());
 
-app.use('/api',api);
+app.use(api);
 
 module.exports = app
