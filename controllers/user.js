@@ -6,15 +6,29 @@ const Api = require('../Api/Api');
 
 var params = new Array();
 
+function emailOperation(req, res) {
+    const operation = req.body.command;
+    switch(operation){
+        case Api.operation.registeruser:
+            emailSignup(req, res);
+            break;
+        case Api.operation.loginuser:
+            emailLogin(req, res);
+            break;
+        default :
+            params[0] = "ERROR";
+            params[1] = "No se ha encontrado la operación";
+            params[2] = {};
+            return res
+                .status(404)
+                .send(Api.response(params));
+    }
+};
+
 function emailSignup(req, res) {
     const transaction = req.body.transaction;
     const register = transaction.action;
     const user = new User(register);
-    params[1] = null;
-    params[2] = {
-        token: service.createToken(user),
-        message: 'Register success'
-    };
     user.save(function(err){
         params[0] = (err) ? 'ERROR' : 'SUCCESS'
         params[1] = null;
@@ -68,6 +82,5 @@ function emailLogin(req, res) {
 };
 
 module.exports = {
-    emailSignup,
-    emailLogin
+    emailOperation
 }

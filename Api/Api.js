@@ -18,5 +18,6 @@ function request(params){
 
 module.exports = {
 	response,
-	request
+	request,
+	operation
 }

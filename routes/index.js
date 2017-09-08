@@ -5,8 +5,7 @@ const usermiddleware = require('../middleware/user.js');
 const auth = require('../controllers/user');
 
 // Rutas de autenticación y login
-api.post('/auth/signup', auth.emailSignup);
-api.post('/auth/login', auth.emailLogin);
+api.post('/auth/', auth.emailOperation);
 
 // Ruta solo accesible si estás autenticado
 api.get('/private',usermiddleware, (req, res) => {
