@@ -20,7 +20,7 @@ function emailOperation(req, res) {
             params[0] = "ERROR";
             params[1] = lang.mstrNotFoundOperation;
             return res
-                .status(500)
+                .status(200)
                 .send(Api.response(params));
     }
 };
@@ -64,7 +64,7 @@ function emailLogin(req, res) {
         if(!user){
             params[1] = lang.mstrNotFoundUser;
             return res
-                .status(500)
+                .status(200)
                 .send(Api.response(params));
         }
         params[1] = null;
