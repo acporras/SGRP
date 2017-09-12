@@ -10,16 +10,23 @@ var userSchema = new Schema({
 		no_ape_pat : { type: String },
 		nu_tel : { type: String },
 		nu_cel : { type: String },
-		nu_documento : { type: String },
+		documento : { 
+			co_tipo_documento : { type: String },
+			no_tipo_documento : { type: String },
+			nu_documento : { type: String }
+		},
 		ubigeo : {
 			pais : {
+				co_pais : { type: String },
 				no_pais : { type: String }
 			},
 			provincia : { 
+				co_provincia : { type: String },
 				no_provincia : { type: String }
 			},
 			distrito : {
-				no_distrito : { type: String }	
+				co_distrito : { type: String },
+				no_distrito : { type: String }
 			}
 		}
 	},

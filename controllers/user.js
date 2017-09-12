@@ -3,10 +3,11 @@ require('../models/user');
 const User = mongoose.model('user');
 const service = require('../services/index');
 const Api = require('../Api/Api');
-
+var lang = {};
 var params = new Array();
-
 function emailOperation(req, res) {
+    var lang = require('../lang/' + req.body.language);
+    console.log(lang);
     const operation = req.body.command;
     switch(operation){
         case Api.operation.registeruser:
@@ -17,10 +18,9 @@ function emailOperation(req, res) {
             break;
         default :
             params[0] = "ERROR";
-            params[1] = "No se ha encontrado la operación";
-            params[2] = {};
+            params[1] = lang.mstrNotFoundOperation;
             return res
-                .status(404)
+                .status(500)
                 .send(Api.response(params));
     }
 };
@@ -34,11 +34,10 @@ function emailSignup(req, res) {
         params[1] = null;
         params[2] = {
             token: service.createToken(user),
-            message: 'Register success'
+            message: lang.mstrSuccessfulregistration
         };
         if(err){
             params[1] = err;
-            params[2] = {};
             return res.status(500).send(Api.response(params))
         }
         return res
@@ -55,7 +54,6 @@ function emailLogin(req, res) {
         params[0] = (err || !user) ? 'ERROR' : 'SUCCESS'
         if(err){
             params[1] = err;
-            params[2] = {};
             return res
                 .status(500)
                 .send(err);
@@ -64,16 +62,15 @@ function emailLogin(req, res) {
                 .send(Api.response(params));
         }
         if(!user){
-            params[1] = 'No se Encontro el usuario';
-            params[2] = {};
+            params[1] = lang.mstrNotFoundUser;
             return res
-                .status(404)
+                .status(500)
                 .send(Api.response(params));
         }
         params[1] = null;
         params[2] = {
             token: service.createToken(user),
-            message: 'Login success'
+            message: lang.mstrSuccessfullogeo
         };
         return res
         .status(200)
