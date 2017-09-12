@@ -38,7 +38,7 @@ function emailSignup(req, res) {
         };
         if(err){
             params[1] = err;
-            return res.status(500).send(Api.response(params))
+            return res.status(200).send(Api.response(params))
         }
         return res
             .status(200)
@@ -55,10 +55,10 @@ function emailLogin(req, res) {
         if(err){
             params[1] = err;
             return res
-                .status(500)
+                .status(200)
                 .send(err);
             return res
-                .status(500)
+                .status(200)
                 .send(Api.response(params));
         }
         if(!user){

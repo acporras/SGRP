@@ -8,7 +8,7 @@ function ensureAuthenticated(req, res, next) {
     params[1] = 'Tu petición no tiene cabecera de autorización'
     params[2] = {}
     return res
-      .status(403)
+      .status(200)
       .send(Api.response(params));
   }
   const token = req.headers.authorization.split(" ")[1];
