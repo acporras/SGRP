@@ -7,7 +7,6 @@ var lang = {};
 var params = new Array();
 function emailOperation(req, res) {
     var lang = require('../lang/' + req.body.language);
-    console.log(lang);
     const operation = req.body.command;
     switch(operation){
         case Api.operation.registeruser:
@@ -20,12 +19,13 @@ function emailOperation(req, res) {
             params[0] = "ERROR";
             params[1] = lang.mstrNotFoundOperation;
             return res
-                .status(200)
+                .status(500)
                 .send(Api.response(params));
     }
 };
 
 function emailSignup(req, res) {
+    var lang = require('../lang/' + req.body.language);
     const transaction = req.body.transaction;
     const register = transaction.action;
     const user = new User(register);
@@ -47,6 +47,7 @@ function emailSignup(req, res) {
 };
 
 function emailLogin(req, res) {
+    var lang = require('../lang/' + req.body.language);
     const transaction = req.body.transaction;
     const login = transaction.action;
     const user = login.no_user, password = login.no_password;
@@ -54,9 +55,6 @@ function emailLogin(req, res) {
         params[0] = (err || !user) ? 'ERROR' : 'SUCCESS'
         if(err){
             params[1] = err;
-            return res
-                .status(200)
-                .send(err);
             return res
                 .status(200)
                 .send(Api.response(params));

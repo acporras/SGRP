@@ -4,7 +4,7 @@ const operation = {
 }
 
 function response(params){
-	const dataResponse = {
+	var dataResponse = {
 	   "code": params[0],
 	   "error": params[1],
 	   "transactionResponse": params[2]
@@ -12,12 +12,7 @@ function response(params){
 	return dataResponse;
 }
 
-function request(params){
-
-}
-
 module.exports = {
 	response,
-	request,
 	operation
 }
