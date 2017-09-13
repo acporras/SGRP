@@ -28,7 +28,8 @@ var userSchema = new Schema({
 				co_distrito : { type: String },
 				no_distrito : { type: String }
 			}
-		}
+		},
+		no_correo : { type: String }
 	},
 	fe_crea : { type: Date },
 	fe_cambio : { type: Date },

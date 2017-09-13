@@ -2,5 +2,6 @@
 	"mstrNotFoundOperation" : "No se Encontro la operación",
 	"mstrNotFoundUser" : "No se encontro el usuario",
 	"mstrSuccessfulregistration" : "Registro exitoso",
-	"mstrSuccessfullogeo" : "Logeo exitoso"
+	"mstrSuccessfullogeo" : "Logeo exitoso",
+	"mstrIncorrectPassword" : "Clave Incorrecta"
 }
