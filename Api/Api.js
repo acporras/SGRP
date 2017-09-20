@@ -1,6 +1,7 @@
 const operation = {
 	loginuser : 'LOGIN_TRANSACTION',
-	registeruser : 'REGISTER_TRANSACTION'
+	registeruser : 'REGISTER_TRANSACTION',
+	getoffers : 'GET_OFFERS'
 }
 
 function response(params){

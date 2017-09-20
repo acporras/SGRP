@@ -32,7 +32,9 @@ var userSchema = new Schema({
 		no_correo : { type: String }
 	},
 	fe_crea : { type: Date },
+	co_usuario_crea : { type: String },
 	fe_cambio : { type: Date },
+	co_usuario_cambio : { type: String },
 	fl_inactivo : { type: String }
 });
 module.exports = mongoose.model('user', userSchema);

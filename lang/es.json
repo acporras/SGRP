@@ -3,5 +3,6 @@
 	"mstrNotFoundUser" : "No se encontro el usuario",
 	"mstrSuccessfulregistration" : "Registro exitoso",
 	"mstrSuccessfullogeo" : "Logeo exitoso",
-	"mstrIncorrectPassword" : "Clave Incorrecta"
+	"mstrIncorrectPassword" : "Clave Incorrecta",
+	"mstrNotFoundOffers" : "No se encontraron ofertas"
 }
