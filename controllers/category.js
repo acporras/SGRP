@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-require('../models/offer');
-const Offer = mongoose.model('offer');
+require('../models/category');
+const Category = mongoose.model('category');
 const service = require('../services/index');
 const config = require('../config')
 const Api = require('../Api/Api');
@@ -8,14 +8,13 @@ const Util = require('../controllers/util');
 var lang = {};
 var params = new Array();
 
-
-function offerOperation(req, res) {
+function categoryOperation(req, res) {
     var params = new Array();
     var lang = require('../lang/' + req.body.language);
     const operation = req.body.command;
     switch(operation){
-        case Api.operation.getoffers:
-            getoffers(req, res);
+        case Api.operation.getcategory:
+            getcategory(req, res);
             break;
         default :
             params[0] = "ERROR";
@@ -26,27 +25,28 @@ function offerOperation(req, res) {
     }
 };
 
-function getoffers(req, res) {
+function getcategory(req, res) {
     var params = new Array();
     var lang = require('../lang/' + req.body.language);
     const transaction = req.body.transaction;
-    Offer.find({ fl_inactivo: '0' }, (err, offer) => {
-        params[0] = (err || !offer) ? 'ERROR' : 'SUCCESS'
+    Category.find({ fl_inactivo: '0' }, (err, category) => {
+        
+        params[0] = (err || !category) ? 'ERROR' : 'SUCCESS'
         if(err){
             params[1] = err;
             return res
                 .status(200)
                 .send(Api.response(params));
         }
-        if(Util.isEmptyObject(offer)){
+        if(Util.isEmptyObject(category)){
             params[0] = 'ERROR';
-            params[1] = lang.mstrNotFoundOffer;
+            params[1] = lang.mstrNotFoundCategory;
             return res
                 .status(200)
                 .send(Api.response(params));
         }else{
             params[1] = null;
-            params[2] = offer;
+            params[2] = category;
             return res
                 .status(200)
                 .send(Api.response(params));
@@ -57,5 +57,5 @@ function getoffers(req, res) {
 
 
 module.exports = {
-    offerOperation
+    categoryOperation
 }

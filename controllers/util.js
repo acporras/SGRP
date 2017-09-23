@@ -14,6 +14,11 @@ function getDateTime() {
     return year + "-" + month + "-" + day + " " + hour + ":" + min + ":" + sec;
 }
 
+function isEmptyObject(obj) {
+  return !Object.keys(obj).length;
+}
+
 module.exports = {
-    getDateTime
+    getDateTime,
+    isEmptyObject
 }

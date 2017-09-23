@@ -5,24 +5,10 @@ const User = mongoose.model('user');
 const service = require('../services/index');
 const config = require('../config')
 const Api = require('../Api/Api');
+const Util = require('../controllers/util');
 var lang = {};
 var params = new Array();
 
-function getDateTime() {
-    var date = new Date();
-    var hour = date.getHours();
-    hour = (hour < 10 ? "0" : "") + hour;
-    var min  = date.getMinutes();
-    min = (min < 10 ? "0" : "") + min;
-    var sec  = date.getSeconds();
-    sec = (sec < 10 ? "0" : "") + sec;
-    var year = date.getFullYear();
-    var month = date.getMonth() + 1;
-    month = (month < 10 ? "0" : "") + month;
-    var day  = date.getDate();
-    day = (day < 10 ? "0" : "") + day;
-    return year + "-" + month + "-" + day + " " + hour + ":" + min + ":" + sec;
-}
 
 function emailOperation(req, res) {
     var params = new Array();
@@ -53,7 +39,7 @@ function emailSignup(req, res) {
     var no_user = register.no_user;
     var no_password = register.no_password;
     var persona = register.persona;
-    var fe_crea = getDateTime();
+    var fe_crea = Util.getDateTime();
     bcrypt.hash(no_password, BCRYPT_SALT_ROUNDS)
         .then((hashedPassword) => {
             const user = new User({

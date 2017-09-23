@@ -4,5 +4,6 @@
 	"mstrSuccessfulregistration" : "Successful registration",
 	"mstrSuccessfullogeo" : "Successful logeo",
 	"mstrIncorrectPassword" : "Incorrect Password",
-	"mstrNotFoundOffers" : "Not found offers"
+	"mstrNotFoundOffers" : "Not found offers",
+	"mstrNotFoundCategory" : "Not found category's"
 }

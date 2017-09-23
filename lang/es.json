@@ -4,5 +4,6 @@
 	"mstrSuccessfulregistration" : "Registro exitoso",
 	"mstrSuccessfullogeo" : "Logeo exitoso",
 	"mstrIncorrectPassword" : "Clave Incorrecta",
-	"mstrNotFoundOffers" : "No se encontraron ofertas"
+	"mstrNotFoundOffers" : "No se encontraron ofertas",
+	"mstrNotFoundCategory" : "No se encontraron Categorias"
 }
