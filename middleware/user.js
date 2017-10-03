@@ -22,5 +22,4 @@ function ensureAuthenticated(req, res, next) {
       res.status(response.transactionResponse.status)
     })
 }
-
 module.exports = ensureAuthenticated

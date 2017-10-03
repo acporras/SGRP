@@ -18,7 +18,9 @@
   "jwt-simple": "^0.5.1",
   "method-override": "^2.3.9",
   "moment": "^2.18.1",
-  "mongoose": "^4.11.10"
+  "mongoose": "^4.11.10",
+  "path": "^0.12.7",
+  "pug": "^2.0.0-rc.4"
  },
  "devDependencies": {
   "nodemon": "^1.12.0"

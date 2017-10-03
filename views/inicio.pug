@@ -1,0 +1,62 @@
+doctype html
+html
+  head
+    // Theme JS files
+    script(type='text/javascript', src='./librerias/jquery-3.2.1.min.js')
+    script(type='text/javascript', src='./js/plugins/forms/validation/validate.min.js')
+    script(type='text/javascript', src='./js/plugins/forms/styling/uniform.min.js')
+    script(type='text/javascript', src='./js/plugins/ui/prism.min.js')
+    script(type='text/javascript', src='./js/plugins/notifications/pnotify.min.js')
+    script(type='text/javascript', src='./js/plugins/notifications/noty.min.js')
+    script(type='text/javascript', src='./js/plugins/notifications/jgrowl.min.js')
+    script(type='text/javascript', src='./js/core/app.js')
+    // /theme JS files
+    // Local Libraries
+    script(type='text/javascript', src='./librerias/indexJS.js')
+    // /Local Libraries
+    style(type='text/css').
+      body{
+      background-image: url("./images/backgrounds/background.jpg");
+      background-size: cover;
+      }
+  body.login-container
+    // Page container
+    .page-container
+      // Page content
+      .page-content
+        // Main content
+        .content-wrapper
+          // Content area
+          .content.pb-20
+            // Form with validation
+            form#formIniciarSesion(action='#')
+              .panel.panel-body.login-form
+                .text-center
+                  .icon-object.border-blue-800.text-blue-800
+                    i.icon-users
+                  h5.content-group
+                    | Sistema Administrativo 
+                    small.display-block Ingrese sus credenciales
+                .form-group.has-feedback.has-feedback-left
+                  input#txtUsuario.form-control(type='text', placeholder='Usuario', name='txtUsuario', required='required')
+                  .form-control-feedback
+                    i.icon-user.text-muted
+                .form-group.has-feedback.has-feedback-left
+                  input#txtContrasena.form-control(type='password', placeholder='Contraseña', name='txtContrasena', required='required')
+                  .form-control-feedback
+                    i.icon-lock2.text-muted
+                .form-group.login-options
+                  .row
+                    .col-sm-12.text-right
+                      a(href='#') ¿Olvide mi contraseña?
+                .form-group
+                  button.btn.bg-blue.btn-block(type='submit')
+                    | Ingresar 
+                    i.icon-circle-right2.position-right
+                .content-divider.text-muted.form-group
+                  span Papa Johns Perú
+            // /form with validation
+          // /content area
+        // /main content
+      // /page content
+    // /page container

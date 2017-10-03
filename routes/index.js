@@ -12,7 +12,8 @@ api.get('/private',usermiddleware, (req, res) => {
 });
 
 api.get('/',function(req, res){
-	res.send("Welcome to ws sgrp!");
+	//res.send("Welcome to ws sgrp!");
+	res.render('inicio', { tile : "Inicio" });
 });
 
 //Peticiones
