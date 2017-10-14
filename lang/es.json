@@ -6,5 +6,8 @@
 	"mstrIncorrectPassword" : "Clave Incorrecta",
 	"mstrNotFoundOffers" : "No se encontraron ofertas",
 	"mstrNotFoundCategory" : "No se encontraron Categorias",
-	"mstrNotFoundCountry" : "No se encontraron paises"
+	"mstrNotFoundCountry" : "No se encontraron paises",
+	"mstrNotFoundDepartment" : "No se encontraron departamentos",
+	"mstrNotFoundProvince" : "No se encontraron provincias",
+	"mstrNotFoundDistrict" : "No se encontraron distritos"
 }

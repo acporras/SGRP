@@ -14,7 +14,7 @@ function departmentOperation(req, res) {
     const operation = req.body.command;
     switch(operation){
         case Api.operation.getdepartment:
-            getcountry(req, res);
+            getdepartment(req, res);
             break;
         default :
             params[0] = "ERROR";
@@ -29,7 +29,9 @@ function getdepartment(req, res) {
     var params = new Array();
     var lang = require('../lang/' + req.body.language);
     const transaction = req.body.transaction;
-    Department.find({ fl_inactivo: '0' }, (err, department) => {
+    const co_pais = transaction.action.co_pais;
+    const filters = { co_pais :  co_pais,  fl_inactivo: '0' };
+    Department.find(filters, (err, department) => {
         
         params[0] = (err || !department) ? 'ERROR' : 'SUCCESS'
         if(err){
@@ -40,7 +42,7 @@ function getdepartment(req, res) {
         }
         if(Util.isEmptyObject(department)){
             params[0] = 'ERROR';
-            params[1] = lang.mstrNotFoundCountry;
+            params[1] = lang.mstrNotFoundDepartment;
             return res
                 .status(200)
                 .send(Api.response(params));

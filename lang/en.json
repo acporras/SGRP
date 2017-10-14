@@ -6,5 +6,8 @@
 	"mstrIncorrectPassword" : "Incorrect Password",
 	"mstrNotFoundOffers" : "Not found offers",
 	"mstrNotFoundCategory" : "Not found categories",
-	"mstrNotFoundCountry" : "Not found countries"
+	"mstrNotFoundCountry" : "Not found countries",
+	"mstrNotFoundDepartment" : "Not Found departments",
+	"mstrNotFoundProvince" : "Not Found provinces",
+	"mstrNotFoundDistrict" : "Not Found districts"
 }

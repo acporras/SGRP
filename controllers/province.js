@@ -29,7 +29,9 @@ function getprovince(req, res) {
     var params = new Array();
     var lang = require('../lang/' + req.body.language);
     const transaction = req.body.transaction;
-    Province.find({ fl_inactivo: '0' }, (err, province) => {
+    const co_department = transaction.action.co_department;
+    const filters = { co_department :  co_department,  fl_inactivo: '0' };
+    Province.find(filters, (err, province) => {
         
         params[0] = (err || !province) ? 'ERROR' : 'SUCCESS'
         if(err){
@@ -40,7 +42,7 @@ function getprovince(req, res) {
         }
         if(Util.isEmptyObject(province)){
             params[0] = 'ERROR';
-            params[1] = lang.mstrNotFoundCountry;
+            params[1] = lang.mstrNotFoundProvince;
             return res
                 .status(200)
                 .send(Api.response(params));

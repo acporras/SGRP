@@ -29,7 +29,9 @@ function getdistrict(req, res) {
     var params = new Array();
     var lang = require('../lang/' + req.body.language);
     const transaction = req.body.transaction;
-    District.find({ fl_inactivo: '0' }, (err, district) => {
+    const co_province = transaction.action.co_province;
+    const filters = { co_province :  co_province,  fl_inactivo: '0' };
+    District.find(filters, (err, district) => {
         
         params[0] = (err || !district) ? 'ERROR' : 'SUCCESS'
         if(err){
@@ -40,7 +42,7 @@ function getdistrict(req, res) {
         }
         if(Util.isEmptyObject(district)){
             params[0] = 'ERROR';
-            params[1] = lang.mstrNotFoundCountry;
+            params[1] = lang.mstrNotFoundDistrict;
             return res
                 .status(200)
                 .send(Api.response(params));
