@@ -29,8 +29,8 @@ function getprovince(req, res) {
     var params = new Array();
     var lang = require('../lang/' + req.body.language);
     const transaction = req.body.transaction;
-    const co_department = transaction.action.co_department;
-    const filters = { co_department :  co_department,  fl_inactivo: '0' };
+    const co_departamento = transaction.action.co_departamento;
+    const filters = { co_departamento :  co_departamento,  fl_inactivo: '0' };
     Province.find(filters, (err, province) => {
         
         params[0] = (err || !province) ? 'ERROR' : 'SUCCESS'
