@@ -6,6 +6,9 @@ const auth = require('../controllers/user');
 const offer = require('../controllers/offer');
 const category = require('../controllers/category');
 const country = require('../controllers/country');
+const department = require('../controllers/department');
+const province = require('../controllers/province');
+const district = require('../controllers/district');
 
 // Ruta solo accesible si estás autenticado
 api.get('/private',usermiddleware, (req, res) => {
