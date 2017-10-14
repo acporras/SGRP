@@ -2,6 +2,7 @@ var mongoose = require('mongoose'),
     Schema   = mongoose.Schema;
 
 var userSchema = new Schema({
+	co_user : { type: String },
 	no_user : { type: String },
 	no_password : { type: String },
 	persona : {
