@@ -22,5 +22,8 @@ api.post('/auth/', auth.emailOperation); //Autenticación y Login
 api.post('/offer/', offer.offerOperation);// Peticiones Ofertas
 api.post('/category/', category.categoryOperation);// Peticiones Categorias
 api.post('/country/', country.countryOperation);// Peticiones de Paises
+api.post('/department/', department.departmentOperation);// Peticiones de Departamentos
+api.post('/province/', province.provinceOperation);// Peticiones de Provincias
+api.post('/district/', district.districtOperation);// Peticiones de Distritos
 
 module.exports = api
