@@ -3,7 +3,10 @@ const operation = {
 	registeruser : 'REGISTER_TRANSACTION',
 	getoffers : 'GET_OFFERS',
 	getcategory : 'GET_CATEGORY',
-	getcountry : 'GET_COUNTRY'
+	getcountry : 'GET_COUNTRY',
+	getdepartment: 'GET_DEPARTMENT',
+	getprovince: 'GET_PROVINCE',
+	getdistrict: 'GET_DISTRICT'
 }
 
 function response(params){
